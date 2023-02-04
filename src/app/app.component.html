@@ -1,0 +1,25 @@
+<div class="game">
+  <div class="area">
+    <div class="line" *ngFor="let line of area; let areaIndex = index">
+      <div class="field" *ngFor="let field of line; let lineIndex = index" (click)="click(areaIndex, lineIndex)">
+        {{field}}
+      </div>
+    </div>
+  </div>
+
+
+  <div class="information">
+    <div class="reset" (click)="reset()">
+      Reset
+    </div>
+    <div class="text" >
+      Teraz kolej: {{actual}}
+    </div>
+    <div class="text" *ngIf="win != ''">
+      Wygrał: {{win}}
+    </div>
+    <div class="text" *ngIf="remis">
+      Remis
+    </div>
+  </div>
+</div>
